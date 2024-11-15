@@ -1,0 +1,342 @@
+.button-primary {
+    border: none;
+    padding: 8px 20px;
+    background: #11998d;
+    color: white;
+    transition: 0.5s ease;
+    cursor: pointer;
+    font-size: 17px;
+
+    &:hover {
+        background: #20c2b4;
+    }
+
+    &:disabled {
+        color: #737373;
+        background: #88cec8;
+    }
+
+    &:active {
+        scale: 0.95;
+    }
+}
+.button-secondary {
+    border: none;
+    padding: 8px 20px;
+    background: transparent;
+    color: #000;
+    transition: 0.5s ease;
+    cursor: pointer;
+    font-size: 17px;
+    border: 2px solid #20c2b4;
+    border-radius: 3px;
+    &:hover {
+        background: #20c2b4;
+        color: white;
+    }
+}
+
+.product-details-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+    width: 100%;
+
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+    }
+
+    .slide {
+        width: 100%;
+        max-width: 600px;
+        overflow: hidden;
+        .slide-wrapper {
+            width: 100%;
+        }
+
+        .swiper {
+            max-height: 550px;
+            width: 100%;
+
+            .swiper-button-next {
+                width: 45px;
+                height: 45px;
+                background-color: white;
+                transition: 0.3s ease;
+                color: #11998d;
+                border-radius: 50%;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                &:hover {
+                    background-color: #11998d;
+                    color: white;
+                }
+
+                &::after {
+                    font-size: 16px;
+                    font-weight: 800;
+                }
+            }
+            .swiper-button-prev {
+                width: 45px;
+                height: 45px;
+                background-color: white;
+                transition: 0.3s ease;
+                color: #11998d;
+                border-radius: 50%;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                &:hover {
+                    background-color: #11998d;
+                    color: white;
+                }
+
+                &::after {
+                    font-size: 16px;
+                    font-weight: 800;
+                }
+            }
+        }
+
+        .swiper-slide {
+            img {
+                width: 100%;
+                height: 100% !important;
+                object-fit: cover !important;
+            }
+        }
+    }
+
+    .details {
+        .title {
+            color: #000;
+            font-size: 22px;
+            font-weight: 600;
+            padding: 10px 0;
+        }
+        .divider {
+            height: 2px;
+            width: 100%;
+            background-color: #11998d;
+        }
+
+        h2 {
+            padding: 20px 0;
+        }
+
+        .model {
+            padding: 10px 0;
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .ant-select-selector {
+                height: 42px;
+                padding: 5px 11px;
+                border: 1px solid #11998d;
+                border-radius: 0;
+            }
+        }
+        .color {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 24px;
+            flex-wrap: wrap;
+
+            .color_box {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .check-box {
+                width: 50px;
+                height: 50px;
+                color: white;
+                position: relative;
+
+                @media (max-width: 991px) {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "\f00c";
+                    font-family: "Font Awesome 5 Free";
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    font-weight: 600;
+                    transition: 0.3s ease;
+                    font-size: 22px;
+
+                    @media (max-width: 991px) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .storage {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+
+            .storage-box {
+                padding: 8px 20px;
+                border: 2px solid #11998d;
+                color: #11998d;
+                cursor: pointer;
+
+                &.active {
+                    background: #11998d;
+                    color: white;
+                }
+
+                @media (max-width: 991px) {
+                    padding: 4px 15px;
+                    border: 1px solid #11998d;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-top: 24px;
+            .quantity-wrapper {
+                display: flex;
+                border: 2px solid #11998d;
+                width: fit-content;
+                // padding: 5px 20px;
+                gap: 5px;
+
+                @media (max-width: 991px) {
+                    border: 1px solid #11998d;
+                    font-size: 14px;
+                }
+            }
+            .minus {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                cursor: pointer;
+                border-radius: 50%;
+
+                &:hover {
+                    background: #ebebeb;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "\f068";
+                    font-family: "Font Awesome 5 Free";
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    font-weight: 600;
+                    transition: 0.3s ease;
+                    font-size: 20px;
+
+                    @media (max-width: 991px) {
+                        font-size: 14px;
+                    }
+                }
+            }
+            .qty {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .plus {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                cursor: pointer;
+                border-radius: 50%;
+
+                &:hover {
+                    background: #ebebeb;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "\2b";
+                    font-family: "Font Awesome 5 Free";
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    font-weight: 600;
+                    transition: 0.3s ease;
+                    font-size: 20px;
+                    @media (max-width: 991px) {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .total-price {
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .price {
+                font-size: 22px;
+                font-weight: 500;
+            }
+        }
+
+        .buy-now {
+            margin-top: 20px;
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.description {
+    padding: 30px 0;
+    .title {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        border-bottom: 4px solid #11998d;
+        width: fit-content;
+        padding-bottom: 5px;
+    }
+    p {
+        line-height: 25px;
+        padding-bottom: 10px;
+    }
+}
+
+.shippinginfo {
+    .items {
+        .item {
+            width: 100%;
+            select,
+            input {
+                width: 100%;
+                padding: 5px 10px;
+                margin-top: 5px;
+                margin-bottom: 10px;
+                outline: none;
+                border-radius: 3px;
+                border: 1px solid rgb(211, 211, 211);
+                background: transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,158 @@
+.dashboard {
+    display: flex;
+
+    .sidebar {
+        width: 280px;
+        height: 100vh;
+        overflow-y: scroll;
+        border-right: 1px solid #e6e6e6;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+
+        &.mobile {
+            width: 60px;
+            padding-top: 100px;
+
+            .logo {
+                display: none;
+            }
+
+            ul {
+                li {
+                    padding: 5px 10px;
+                    width: 100%;
+                    font-size: 22px;
+                    color: #11998d;
+                    a {
+                        text-decoration: none;
+                        color: rgba(0, 0, 0, 0.88);
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+
+            .item {
+                display: none;
+            }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+
+        ul {
+            li {
+                padding: 5px 10px;
+                width: 100%;
+                color: #11998d;
+                a {
+                    text-decoration: none;
+                    color: rgba(0, 0, 0, 0.88);
+                    width: 100%;
+                    display: block;
+                }
+
+                span {
+                    margin-left: 5px;
+                }
+
+                &:hover {
+                    background: #11998d;
+
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        width: calc(100% - 280px);
+
+        &.mobile {
+            width: calc(100% - 60px);
+        }
+
+        .dashboard-nav {
+            width: 100%;
+            padding: 10px 5px;
+            border-bottom: 1px solid #e6e6e6;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
+
+        .outlet {
+            padding: 20px;
+
+            .info-cards {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 24px;
+
+                @media (max-width: 1200px) {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+                @media (max-width: 991px) {
+                    grid-template-columns: 1fr 1fr;
+                }
+                @media (max-width: 767px) {
+                    grid-template-columns: 1fr;
+                }
+
+                .info-card {
+                    padding: 20px 30px;
+                    border-radius: 8px;
+                    border: 1px solid #e6e6e6;
+                    max-width: 280px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    h4 {
+                        font-size: 22px;
+                        line-height: 30px;
+                        font-weight: 600;
+                    }
+                    p {
+                        font-size: 18px;
+                    }
+
+                    .icon {
+                        width: 60px;
+                        height: 60px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        background: #11998d;
+                        color: white;
+                        font-size: 30px;
+                    }
+                }
+            }
+
+            .mini-info {
+                padding-top: 20px;
+
+                h2 {
+                    font-size: 16px;
+                    padding-bottom: 15px;
+                }
+            }
+        }
+    }
+}
